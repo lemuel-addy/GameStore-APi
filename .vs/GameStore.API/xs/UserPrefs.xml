@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{51B0929A-4783-43F4-9C69-5A900F4BBB3F}|https">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/EntityExtensions.cs">
+    <Files>
+      <File FileName="Entities/Game.cs" />
+      <File FileName="Program.cs" Line="29" Column="36" />
+      <File FileName="appsettings.json" Line="16" Column="3" />
+      <File FileName="Endpoints/GamesEndpoints.cs" Line="21" Column="22" />
+      <File FileName="Repositories/InMemGamesRepository.cs" />
+      <File FileName="Entities/EntityExtensions.cs" Line="3" Column="37" />
+      <File FileName="README.md" />
+      <File FileName="Data/Configurations/GameConfiguration.cs" />
+      <File FileName="Repositories/EntityFrameworkGamesRepository.cs" />
+      <File FileName="Dtos.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="GameStore.API" expanded="True">
+            <Node name="GameStore.API" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+              </Node>
+              <Node name="Data" expanded="True">
+                <Node name="Configurations" expanded="True" />
+              </Node>
+              <Node name="Endpoints" expanded="True" />
+              <Node name="Entities" expanded="True">
+                <Node name="EntityExtensions.cs" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Repositories" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.ItemProperties.GameStore.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
