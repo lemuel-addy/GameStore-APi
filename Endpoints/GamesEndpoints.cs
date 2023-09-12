@@ -2,6 +2,7 @@
 using GameStore.API.Dtos;
 using GameStore.API.Entities;
 using GameStore.API.Repositories;
+using Mapster;
 //decouples the requests and application logic (endpoints) from the repository (management of data)
 namespace GameStore.API.Endpoints
 {
@@ -19,7 +20,12 @@ namespace GameStore.API.Endpoints
     .WithParameterValidation(); //activate endpoint filtering for validation
 
             //Getting
-            
+
+            /// <summary>
+            /// Gets a patient's transaction history
+            /// </summary>
+            /// <param name="filter"></param>
+            /// <returns></returns>
             group.MapGet("/", async (IGamesRepository repository) =>   //Injecting the Repository depency into the routes
             (await repository.GetAllAsync()).Select(game => game.AsDto())); //we are not returning entities but Dtos
 
@@ -33,15 +39,9 @@ namespace GameStore.API.Endpoints
             //Adding
             group.MapPost("/", async (IGamesRepository repository, CreateGameDto gameDto) => //receives game Dto instead of Game entity
             {
-                Game game = new()
-                {
-                    Name = gameDto.Name,
-                    Genre = gameDto.Genre,
-                    ReleaseDate = gameDto.ReleaseDate,
-                    ImageUri = gameDto.ImageUri,
-                    Price = gameDto.Price
 
-                };
+                var game = gameDto.Adapt<Game>();
+
                 await repository.CreateAsync(game);
 
                 return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game);
@@ -67,12 +67,12 @@ namespace GameStore.API.Endpoints
             group.MapPut("/{id}", async (IGamesRepository repository, int id, UpdateGameDto updatedGameDto) =>
             {
                 Game? existingGame = await repository.GetAsync(id);
+
                 if (existingGame is null)
                 {
                     return Results.NotFound();
                 }
 
-                
                 existingGame.Name = updatedGameDto.Name;
                 existingGame.ReleaseDate = updatedGameDto.ReleaseDate;
                 existingGame.Price = updatedGameDto.Price;
@@ -80,7 +80,8 @@ namespace GameStore.API.Endpoints
                 existingGame.Genre = updatedGameDto.Genre;
 
                 await repository.UpdateAsync(existingGame);
-                return Results.NoContent();
+                                
+                return Results.Ok(existingGame?.AsDto());
 
             });
 
@@ -98,11 +99,14 @@ namespace GameStore.API.Endpoints
             group.MapDelete("/{id}", async (IGamesRepository repository, int id) =>
             {
                 Game? existingGame = await repository.GetAsync(id);
+
                 if (existingGame is not null)
                 {
                     await repository.DeleteAsync(id);
+
                     return Results.Ok("Deleted");
                 }
+
                 return Results.NotFound();
             });
 

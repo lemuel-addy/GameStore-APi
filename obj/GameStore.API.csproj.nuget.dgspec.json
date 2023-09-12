@@ -1,28 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/Users/lemueladdy/Projects/Gamestore/GameStore.API/GameStore.API.csproj": {}
+    "D:\\gamestoreapi\\GameStore.API.csproj": {}
   },
   "projects": {
-    "/Users/lemueladdy/Projects/Gamestore/GameStore.API/GameStore.API.csproj": {
+    "D:\\gamestoreapi\\GameStore.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lemueladdy/Projects/Gamestore/GameStore.API/GameStore.API.csproj",
+        "projectUniqueName": "D:\\gamestoreapi\\GameStore.API.csproj",
         "projectName": "GameStore.API",
-        "projectPath": "/Users/lemueladdy/Projects/Gamestore/GameStore.API/GameStore.API.csproj",
-        "packagesPath": "/Users/lemueladdy/.nuget/packages/",
-        "outputPath": "/Users/lemueladdy/Projects/Gamestore/GameStore.API/obj/",
+        "projectPath": "D:\\gamestoreapi\\GameStore.API.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\gamestoreapi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/lemueladdy/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
-          "/usr/local/share/dotnet/sdk/7.0.304/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/hubtel/_packaging/hubtel/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
@@ -43,6 +48,10 @@
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
+            },
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.3.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -83,6 +92,10 @@
             "Npgsql.Json.NET": {
               "target": "Package",
               "version": "[7.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
@@ -104,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
